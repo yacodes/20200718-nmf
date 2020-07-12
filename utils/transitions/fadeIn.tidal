@@ -1,0 +1,12 @@
+do
+  xfadeIn 1 16 $ silence
+  xfadeIn 2 16 $ silence
+  xfadeIn 3 16 $ silence
+  xfadeIn 4 16 $ silence
+  xfadeIn 5 16 $ silence
+  xfadeIn 6 16 $ silence
+  xfadeIn 7 16 $ silence
+  xfadeIn 8 16 $ silence
+  xfadeIn 9 16 $ silence
+  xfadeIn 10 16 $ silence
+  xfadeIn 11 16 $ silence

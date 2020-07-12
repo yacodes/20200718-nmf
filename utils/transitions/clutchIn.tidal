@@ -1,0 +1,12 @@
+do
+  clutchIn 1 16 $ silence
+  clutchIn 2 16 $ silence
+  clutchIn 3 16 $ silence
+  clutchIn 4 16 $ silence
+  clutchIn 5 16 $ silence
+  clutchIn 6 16 $ silence
+  clutchIn 7 16 $ silence
+  clutchIn 8 16 $ silence
+  clutchIn 9 16 $ silence
+  clutchIn 10 16 $ silence
+  clutchIn 11 16 $ silence
