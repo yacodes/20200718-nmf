@@ -24,7 +24,7 @@ let fbassres val = ccn 21 # ccv val
 
 let fbassffreq val = ccn 20 # ccv val
 
-d1
+d2
   $ off "e" (|+ n "12") 
   $ n ("<e*4 d*4 c*4 d*4>" - "0")
   # stack [
@@ -43,5 +43,9 @@ d2 $ s "tok*8"
 d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 0 # gain 1.5
 
 d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 1 # gain 1.5
+
+d1 $ struct "t [<~ t*2> t] [<t ~> t*2] <t t*2>" $ s "[midi*4, bd]"
+  # midichan 15 # ccn 0 # ccv 127 -- (range 0 127 $ rand)
+  # gain 1.75 # shape 0.5
 
 hush
