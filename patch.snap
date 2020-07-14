@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="Virtual Raw MIDI 0-0">
+    <port id="0" />
+  </client>
+  <client name="Virtual Raw MIDI 0-1">
+    <port id="0" />
+  </client>
+  <client name="Virtual Raw MIDI 0-2">
+    <port id="0" />
+  </client>
+  <client name="Virtual Raw MIDI 0-3">
+    <port id="0" />
+  </client>
+  <client name="a2jmidid" />
+  <client name="SuperCollider">
+    <port id="1" />
+  </client>
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1">
+      <connection port="REAPER:in1" />
+    </port>
+    <port name="capture_2">
+      <connection port="REAPER:in2" />
+    </port>
+    <port name="midi_capture_1">
+      <connection port="REAPER:MIDI Input 1" />
+    </port>
+    <port name="midi_capture_2" />
+    <port name="midi_capture_3" />
+    <port name="midi_capture_4" />
+    <port name="midi_capture_5" />
+    <port name="midi_capture_6" />
+    <port name="midi_capture_7" />
+    <port name="midi_capture_8" />
+    <port name="midi_capture_9" />
+    <port name="midi_capture_10" />
+    <port name="midi_capture_11" />
+    <port name="midi_capture_12" />
+    <port name="midi_capture_13" />
+    <port name="midi_capture_14" />
+    <port name="midi_capture_15" />
+    <port name="midi_capture_16" />
+  </client>
+  <client name="a2j">
+    <port name="Midi Through [14] (capture): Midi Through Port-0" />
+    <port name="Virtual Raw MIDI 0-0 [16] (capture): VirMIDI 0-0">
+      <connection port="REAPER:MIDI Input 1" />
+    </port>
+    <port name="Virtual Raw MIDI 0-1 [17] (capture): VirMIDI 0-1" />
+    <port name="Virtual Raw MIDI 0-2 [18] (capture): VirMIDI 0-2" />
+    <port name="Virtual Raw MIDI 0-3 [19] (capture): VirMIDI 0-3" />
+  </client>
+  <client name="SuperCollider">
+    <port name="out_1">
+      <connection port="REAPER:in3" />
+    </port>
+    <port name="out_2">
+      <connection port="REAPER:in4" />
+    </port>
+  </client>
+  <client name="system">
+    <port name="midi_capture_17" />
+    <port name="midi_capture_18" />
+    <port name="midi_capture_19" />
+    <port name="midi_capture_20" />
+    <port name="midi_capture_21" />
+    <port name="midi_capture_22" />
+    <port name="midi_capture_23" />
+    <port name="midi_capture_24" />
+    <port name="midi_capture_25" />
+    <port name="midi_capture_26" />
+    <port name="midi_capture_27" />
+    <port name="midi_capture_28" />
+    <port name="midi_capture_29" />
+    <port name="midi_capture_30" />
+    <port name="midi_capture_31" />
+    <port name="midi_capture_32" />
+    <port name="midi_capture_33" />
+    <port name="midi_capture_34" />
+    <port name="midi_capture_35" />
+    <port name="midi_capture_36" />
+    <port name="midi_capture_37" />
+    <port name="midi_capture_38" />
+    <port name="midi_capture_39" />
+    <port name="midi_capture_40" />
+    <port name="midi_capture_41" />
+    <port name="midi_capture_42" />
+    <port name="midi_capture_43" />
+    <port name="midi_capture_44" />
+    <port name="midi_capture_45" />
+    <port name="midi_capture_46" />
+    <port name="midi_capture_47" />
+    <port name="midi_capture_48" />
+    <port name="midi_capture_49" />
+    <port name="midi_capture_50" />
+    <port name="midi_capture_51" />
+    <port name="midi_capture_52" />
+    <port name="midi_capture_53" />
+    <port name="midi_capture_54" />
+    <port name="midi_capture_55" />
+    <port name="midi_capture_56" />
+    <port name="midi_capture_57" />
+    <port name="midi_capture_58" />
+    <port name="midi_capture_59" />
+    <port name="midi_capture_60" />
+    <port name="midi_capture_61" />
+    <port name="midi_capture_62" />
+    <port name="midi_capture_63" />
+    <port name="midi_capture_64" />
+  </client>
+  <client name="REAPER">
+    <port name="out1">
+      <connection port="system:playback_1" />
+    </port>
+    <port name="out2">
+      <connection port="system:playback_2" />
+    </port>
+  </client>
+  <client name="SuperCollider">
+    <port name="out_3">
+      <connection port="REAPER:in5" />
+    </port>
+    <port name="out_4">
+      <connection port="REAPER:in6" />
+    </port>
+    <port name="out_5">
+      <connection port="REAPER:in7" />
+    </port>
+    <port name="out_6">
+      <connection port="REAPER:in8" />
+    </port>
+    <port name="out_7">
+      <connection port="REAPER:in9" />
+    </port>
+    <port name="out_8">
+      <connection port="REAPER:in10" />
+    </port>
+    <port name="out_9">
+      <connection port="REAPER:in11" />
+    </port>
+    <port name="out_10">
+      <connection port="REAPER:in12" />
+    </port>
+    <port name="out_11">
+      <connection port="REAPER:in13" />
+    </port>
+    <port name="out_12">
+      <connection port="REAPER:in14" />
+    </port>
+    <port name="out_13">
+      <connection port="REAPER:in15" />
+    </port>
+    <port name="out_14">
+      <connection port="REAPER:in16" />
+    </port>
+    <port name="out_15">
+      <connection port="REAPER:in17" />
+    </port>
+    <port name="out_16">
+      <connection port="REAPER:in18" />
+    </port>
+    <port name="out_17">
+      <connection port="REAPER:in19" />
+    </port>
+    <port name="out_18">
+      <connection port="REAPER:in20" />
+    </port>
+    <port name="out_19">
+      <connection port="REAPER:in21" />
+    </port>
+    <port name="out_20">
+      <connection port="REAPER:in22" />
+    </port>
+    <port name="out_21">
+      <connection port="REAPER:in23" />
+    </port>
+    <port name="out_22">
+      <connection port="REAPER:in24" />
+    </port>
+    <port name="out_23">
+      <connection port="REAPER:in25" />
+    </port>
+    <port name="out_24">
+      <connection port="REAPER:in26" />
+    </port>
+  </client>
+  <client name="a2j">
+    <port name="SuperCollider [129] (capture): out0" />
+  </client>
+  <client name="alsa-jack.jackP.1408.75">
+    <port name="out_000">
+      <connection port="system:playback_1" />
+    </port>
+    <port name="out_001">
+      <connection port="system:playback_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>

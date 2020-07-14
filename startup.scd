@@ -2,7 +2,7 @@
 s.options.numBuffers = 2**24;
 s.options.memSize = 2**20;
 s.options.maxNodes = 2**20;
-s.options.numOutputBusChannels = 2;
+s.options.numOutputBusChannels = 24;
 s.options.numInputBusChannels = 0;
 
 s.waitForBoot {
@@ -50,6 +50,6 @@ s.waitForBoot {
   ~dirt.soundLibrary.addMIDI(\midi, ~midiOut);
 
   // Start SuperDirt
-  ~dirt.start(20626, 24.collect({0}));
+  ~dirt.start(20626, 24.collect({|i| i*2}));
 };
 )
