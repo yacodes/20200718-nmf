@@ -6,7 +6,7 @@ d2 $ fa 2 $ s "~ sd"
 
 d3 $ s "hh:8*8" # pan 0.5
   
-d4 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
+d4 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8" # gain 1.4
 
 d6 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
 
@@ -14,6 +14,34 @@ d7 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
 
 d8 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
 
-d13 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
+d13 $ n (scale "minor" ("0 [~ 1*2] <3 4*2> [<2 ~> 3]" + "a3")) # s "bass:8"
+
+let kix = s "midi" # midichan 0
+
+let fbass = s "midi" # midichan 1
+
+let fbassres val = ccn 21 # ccv val
+
+let fbassffreq val = ccn 20 # ccv val
+
+d1
+  $ off "e" (|+ n "12") 
+  $ n ("<e*4 d*4 c*4 d*4>" - "0")
+  # stack [
+    fbassffreq (segment 32 $ range 20 100 $ sl 4 $ perlin),
+    fbassres (segment 32 $ range 20 90 $ sl 4 $ perlin + 0.25)
+  ] # fbass
+
+d2 $ struct "t [~ t] <t t*2> [<t ~> <~ t*2>]" $ n "e*4" # s "midi*4" # midichan 0 # gain 1.2
+
+d2 $ s "midi*4" # n "c4" # midichan 0 # legato 1
+
+d2 $ s "bd*4" # gain 4
+
+d2 $ s "tok*8"
+
+d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 0 # gain 1.5
+
+d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 1 # gain 1.5
 
 hush

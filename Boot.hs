@@ -54,10 +54,12 @@ let d11 = p 11 . (|< orbit 10)
 let d12 = p 12 . (|< orbit 11)
 
 -- MIDI Instruments
--- let helmhardbass = s "midi" # midichan 0
+let kix = s "midi" # midichan 0
+let fbass = s "midi" # midichan 1
 
 -- MIDI Controls
--- let mifilter value = ccn 14 # ccv value
+let fbassffreq val = ccn 20 # ccv val
+let fbassres val = ccn 21 # ccv val
 
 -- Aliases
 let wm = whenmod
