@@ -1,7 +1,5 @@
-#+TITLE: Network Music Festival README
+#+TITLE: Network Music Festival
 #+AUTHOR: Aleksandr Yakunichev
 #+EMAIL: hi@ya.codes
 
-* Network Music Festival
-  This is the repo for Network Music Festival 2020 TidalCycles performance by @yacodes & @postviolet
- 
+This is the repo for Network Music Festival 2020 TidalCycles performance by @yacodes & @postviolet
