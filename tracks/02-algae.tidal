@@ -1,0 +1,30 @@
+-- 02 Algae
+
+setcps (144/60/4)
+
+d1
+  $ wm 9 7 (mask "t f!3")
+  $ wm 3 1 (mask "t!3 f")
+  $ juxBy 0.125 rev
+  $ stack [(sound $ slow 32 $ step' ["dt2perc", "dt3clap", "dtperc", "thhat"]
+     (take 512 $ lindenmayer 8 "0:0~01,1:2131,2:2~20,3:010~201~,~:0201~30~1" "0"))]
+    # n "{0 1 2 3 4 5 6}%4" # legato 1 # gain 1 
+
+d2
+  $ wm 32 30 (# gain 0)
+  $ struct "<[t*4]!3 <[t!3 t*2] [t [[~ t]!2] [t ~ t!2] t*2]>>"
+  $ s "dt3kick"
+    # shape 0.4
+
+d3
+  $ wm 32 30 (# gain 0)
+  $ loopAt 4 $ striate 32 $ s "8dt3bass:33" # gain 1.2 # shape 0.5
+
+d4
+  $ wm 32 30 (superimpose $ const $ loopAt 2 $ striate 2 $ s "dt3sweepup:1" # gain 1 # shape 0.2)
+  $ jux rev
+  $ shuffle 2
+  $ loopAt 4 $ gap 4 $ s "8dt3synth:0" -- 1
+    -- # squiz "[1 2]*2"
+
+hush
