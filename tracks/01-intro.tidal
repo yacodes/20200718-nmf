@@ -1,62 +1,20 @@
 -- 01 Intro
 
-d1 $ s "bd*4"
+setcps (80/60/4)
 
-d2 $ fa 2 $ s "~ sd"
-
-d3 $ s "hh:8*8" # pan 0.5
-  
-d4 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8" # gain 1.4
-
-d6 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
-
-d7 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
-
-d8 $ n "0 [~ 1*2] <3 4*2> [<2 ~> 3]" # s "bass:8"
-
-d13 $ n (scale "minor" ("0 [~ 1*2] <3 4*2> [<2 ~> 3]" + "a3")) # s "bass:8"
-
-let kix = s "midi" # midichan 0
-
-let fbass = s "midi" # midichan 1
-
-let fbassres val = ccn 21 # ccv val
-
-let fbassffreq val = ccn 20 # ccv val
-
-d2
-  $ off "e" (|+ n "12") 
-  $ n ("<e*4 d*4 c*4 d*4>" - "0")
-  # stack [
-    fbassffreq (segment 32 $ range 20 100 $ sl 4 $ perlin),
-    fbassres (segment 32 $ range 20 90 $ sl 4 $ perlin + 0.25)
-  ] # fbass
-
-d2 $ struct "t [~ t] <t t*2> [<t ~> <~ t*2>]" $ n "e*4" # s "midi*4" # midichan 0 # gain 1.2
-
-d2 $ s "midi*4" # n "c4" # midichan 0 # legato 1
-
-d2 $ s "bd*4" # gain 4
-
-d2 $ s "tok*8"
-
-d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 0 # gain 1.5
-
-d2 $ fa 2 $ n "~ d3" # s "midi" # midichan 1 # gain 1.5
-
-d1
-  $ struct "t(<5!3 7>, 8)"
-  $ stack [
-    -- Valhalla Freq Echo
-    ccn 0 # ccv 80, -- Dry / Wet
-    ccn 1 # ccv (segment 32 $ range 0 127 $ sl 3 $ perlinWith sine + saw), -- Shift
-    ccn 2 # ccv (segment 32 $ range 20 60 $ sl 4 $ perlinWith cosine), -- Delay
-    ccn 3 # ccv "[10 20 50]/3", -- Sync
-    ccn 4 # ccv (segment 32 $ range 20 80 $ sl 4 $ perlinWith sine + 0.125) -- Feedback
-    -- fbassres (segment 32 $ range 20 90 $ sl 4 $ perlin + 0.25) 
-  ]
-  # s "[midi*4, bd]"
-  # midichan 15
-  # gain 1.5
+do
+  let root = "[e3]"
+  let chords = "<1 <6 4> 2 <5 [5 7]>>"
+  let mx = [1, 0.8, 0.8, 0.8, 0.8, "<0 1>"]
+  d1 $ n (scale "minor" (chords |- "1") |+ root) # fbass # gain (mx!!0)
+  d2 $ loopAt 2 $ striate 32 $ n (segment "<1 2>" $ (irand 7) + 1)
+    # s "8obj" # gain (mx!!1) # pan (segment 32 $ rand)
+  d3 $ wm 5 3 (# gain (mx!!2)) $ loopAt 2 $ striate 32 $ s "8scp:30" 
+    # pan (perlinWith saw + 0.125) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d4 $ wm 7 5 (# gain (mx!!3)) $ loopAt 2 $ striate 32 $ s "8scp:24"
+    # pan (perlinWith sine) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d5 $ wm 3 1 (# gain (mx!!4)) $ loopAt 2 $ striate 32 $ s "8scp:25"
+    # pan (perlinWith cosine) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d6 $ jux rev $ shuffle 2 $ loopAt 2 $ slice 8 "0 7 ~ ~ 4 ~ 6 7" $ s "8dt3synth" # gain (mx!!5) # n "7"
 
 hush

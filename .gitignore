@@ -1,2 +1,4 @@
 *.bak
 *.rpp-bak
+samples/
+!samples/.keep
