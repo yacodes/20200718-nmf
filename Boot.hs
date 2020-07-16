@@ -65,5 +65,6 @@ let fbassres val = ccn 21 # ccv val
 let wm = whenmod
 let fa = fast
 let sl = slow
+let bi16 = binaryN 16
 
 :set prompt "tidal> "
