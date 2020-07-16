@@ -1,0 +1,33 @@
+-- 06 Chainz
+
+setcps (133/60/4)
+
+d1
+  $ wm 32 30 (# gain 0)
+  $ slow 8
+  $ mask "<t!3 <[t!3 f] [t [~ t] t [~ t]] t(5, 8)>>"
+  $ s (fmap (["dt3perc", "dt2bass", "dt2synth"]!!) $ markovPat 128 0 [[2,5,3], [3,1,2], [3,4,1]])
+  # legato 1
+  # n (fmap ([0,1,2]!!) $ markovPat 128 0 [[1,5,4], [3,2,5], [3,4,1]])
+
+d2
+  $ wm 32 30 (# gain 0)
+  $ struct "<[t*4]!3 t(<3 5 7>, 8)>"
+  $ s "dt3kick:10"
+  # shape 0.3
+
+d3
+  $ wm 32 30 (# gain 0)
+  $ s "~ dt3snare:14"
+
+d4 $ s "dt3impact:18/2" # n (irand 19)
+
+d5
+  $ wm 32 30 (# gain 0)
+  $ s "dt3hat(13, 16, <0 1 2 3 4>)" # gain 0.875 # pan (segment 12 $ sl 4 $ perlin2 sine)
+
+d6
+  $ wm 32 30 $ (superimpose $ const $ loopAt 2 $ rev $ striate 32 $ s "dt3seepd" # gain 1.2 # shape 0.5)
+  $ loopAt 4 $ striate 32 $ s "8dt3bass:34" # gain 1.2 # shape 0.2
+
+hush
