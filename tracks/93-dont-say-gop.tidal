@@ -1,0 +1,30 @@
+-- 93 Don't say gop
+setcps (152/60/4)
+
+d1
+  $ wm 16 14 (const $ loopAt 2 $ striate 8 $ s "dt3sweepup" # n "22")
+  $ shuffle 4 $ loopAt 4 $ striate 8 $ s "8tfsynth" # n "19"
+
+d2
+  $ wm 16 14 (# gain 0)
+  $ struct "<[t*4]!3 [t*2 t(<3 5>/2,8)]>" $ stack [
+    s "dt3kick:3" # crush 4 # shape 0.2,
+    s "dt3kick:7"
+  ]
+
+d3
+  $ wm 16 14 (# gain 0)
+  $ struct "[~ t]*4" $ s "dt3ride" # n "9" # gain 0.9
+
+d4 $ struct "[~ t]" $ s "dt3snare" # n "15"
+
+d5
+  $ wm 16 14 (# gain 0)
+  $ struct "t(<11 13 15>, 16, <3 1 3 2 3>)" $ s "dt3hat" # n "{10 11 12}%3" # gain 0.9 # pan (sl 2 $ perlin)
+
+d6 $ someCycles (fa 2) $ slice 8 "[0] [~ 2] [~] [6 7]" $ s "8dt3synth:21" # gain 0.8 # legato 1
+
+$ wm 16 14 (# gain 0)
+$ wm 16 14 (const $ loopAt 2 $ striate 8 $ s "dt3sweepup" # n "22")
+
+hush
