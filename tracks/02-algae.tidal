@@ -14,7 +14,7 @@ d2
   $ wm 32 30 (# gain 0)
   $ struct "<[t*4]!3 <[t!3 t*2] [t [[~ t]!2] [t ~ t!2] t*2]>>"
   $ s "dt3kick"
-    # shape 0.4
+    # shape 0.4 # gain 1.2
 
 d3
   $ wm 32 30 (# gain 0)
@@ -25,6 +25,6 @@ d4
   $ jux rev
   $ shuffle 2
   $ loopAt 4 $ gap 4 $ s "8dt3synth:0" -- 1
-    -- # squiz "[1 2]*2"
+    # squiz "[1 2]*2"
 
 hush

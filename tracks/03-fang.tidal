@@ -28,7 +28,7 @@ d4
 
 d5
   $ wm 32 30 (fa 2)
-  $ fa 4 $ s "~ dt3ride" # legato 1 # gain 0.9
+  $ fa 4 $ s "~ dt3ride" # legato 1 # gain 0.9 # n 8
 
 d6
   $ wm 32 30 (superimpose $ const $ loopAt 2 $ striate 32 $ s "dt3sweepup:2")

@@ -6,7 +6,7 @@ d1
   $ wm 32 28 (# gain 0)
   $ stack [(sound $ slow 32 $ step' ["dt2snare", "dt2synth", "dt3perc", "dt2bass"]
      (take 512 $ lindenmayer 8 "0:1220,1:~20,2:3010,3:01~2,~:0312" "0"))]
-    # legato 1 # gain 1.125 # n "{1 2 3 4}%4" # pan "[0.4 0.6]*2"
+    # legato 1 # gain 0.925 # n "{1 2 3 4}%4" # pan "[0.4 0.6]*2"
 
 d2
   $ wm 32 28 (# gain 0)

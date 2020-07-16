@@ -30,4 +30,7 @@ d6
   $ wm 32 30 $ (superimpose $ const $ loopAt 2 $ rev $ striate 32 $ s "dt3seepd" # gain 1.2 # shape 0.5)
   $ loopAt 4 $ striate 32 $ s "8dt3bass:34" # gain 1.2 # shape 0.2
 
+$ wm 32 30 (# gain 0)
+$ wm 32 30 $ (superimpose $ const $ loopAt 2 $ rev $ striate 32 $ s "dt3seepd" # gain 1.4 # shape 0.5)
+
 hush
