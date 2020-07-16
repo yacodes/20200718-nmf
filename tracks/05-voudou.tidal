@@ -1,0 +1,24 @@
+-- 05 Voudou
+
+setcps (128/60/4)
+
+d1
+  $ wm 32 28 (# gain 0)
+  $ stack [(sound $ slow 32 $ step' ["dt2snare", "dt2synth", "dt3perc", "dt2bass"]
+     (take 512 $ lindenmayer 8 "0:1220,1:~20,2:3010,3:01~2,~:0312" "0"))]
+    # legato 1 # gain 1.125 # n "{1 2 3 4}%4" # pan "[0.4 0.6]*2"
+
+d2
+  $ wm 32 28 (# gain 0)
+  $ struct "<[t*4]!3 t(<3 5 7>, 8, <0 1 2 3>)>" $ s "dt3kick:2"
+
+d3
+  $ wm 32 28 (# gain 0)
+  $ loopAt 4 $ striate 32 $ s "8dt3synth" # n 27 # gain 0.875
+
+d4
+  $ every 32 (superimpose $ const $ s "dt3impact" # n 3 # gain 1.125 # shape 0.4)
+  $ wm 32 28 (superimpose $ const $ loopAt 4 $ striate 32 $ s "dt3sweepup" # n 13)
+  $ loopAt 4 $ striate 32 $ s "8tfbass" # n 39 # gain 1.2 # shape 0.2
+
+hush
