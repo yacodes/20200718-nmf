@@ -1,0 +1,27 @@
+-- 04 Soltera
+
+setcps (132/60/40)
+
+d1
+  $ loopAt 4 $ striate 32 $ s "8dt3synth" # n 11
+
+d2
+  $ wm 32 28 (brak)
+  $ struct "<[t*4] <[t!3 t*2] [t [~ t!2 ~] <t [~ t]> <t [~ t] t*2>]>>" $ s "dt3kick:12" # shape 0.2
+
+d3
+  $ wm 32 28 (# gain 0)
+  $ stack [
+    s "dt3impact/2" # legato 1 # n "<0 1 2 3 4>",
+    s "~ [dt3snare, dt3clap]" # n 2 # gain 1.1,
+    s "[~ dt3ride]*4" # legato 1 # gain 0.825,
+    wm 3 1 (mask (binaryN 32 92132132321)) $ s "dt3hat*16" # gain 0.875
+  ]
+
+d4
+  $ wm 32 28 (superimpose $ const $ loopAt 4 $ striate 32 $ s "dt3sweepup:5")
+  $ shuffle 2
+  $ loopAt 4 $ striate 32 $ s "8tfsynth"
+    # n 13 # pan (segment 12 $ sl 4 $ sine)
+
+hush
