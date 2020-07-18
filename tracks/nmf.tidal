@@ -1,0 +1,28 @@
+███╗   ██╗███╗   ███╗███████╗    ██████╗  ██████╗ ██████╗  ██████╗ 
+████╗  ██║████╗ ████║██╔════╝    ╚════██╗██╔═████╗╚════██╗██╔═████╗
+██╔██╗ ██║██╔████╔██║█████╗       █████╔╝██║██╔██║ █████╔╝██║██╔██║
+██║╚██╗██║██║╚██╔╝██║██╔══╝      ██╔═══╝ ████╔╝██║██╔═══╝ ████╔╝██║
+██║ ╚████║██║ ╚═╝ ██║██║         ███████╗╚██████╔╝███████╗╚██████╔╝
+╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝         ╚══════╝ ╚═════╝ ╚══════╝ ╚═════╝ 
+
+-- 01 Prolog
+
+setcps (80/60/4)
+
+do
+  let root = "[e4]"
+  let chords = "<1 <6 4> 2 <5 [5 7]>>"
+  -- let mx = [1, 0.8, 0.8, 0.8, 0.8, "<0 1>"]
+  let mx = [1, 0, 0, 0, 0, 0]
+  d1 $ n (scale "minor" (chords |- "1") |+ root) # fbass # gain (mx!!0)
+  d2 $ loopAt 2 $ striate 32 $ n (segment "<1 2>" $ (irand 7) + 1)
+    # s "8obj" # gain (mx!!1) # pan (segment 32 $ rand)
+  d3 $ wm 5 3 (# gain (mx!!2)) $ loopAt 2 $ striate 32 $ s "8scp:30" 
+    # pan (perlinWith saw + 0.125) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d4 $ wm 7 5 (# gain (mx!!3)) $ loopAt 2 $ striate 32 $ s "8scp:24"
+    # pan (perlinWith sine) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d5 $ wm 3 1 (# gain (mx!!4)) $ loopAt 2 $ striate 32 $ s "8scp:25"
+    # pan (perlinWith cosine) # gain 0 # delay 0.2 # delayt 0.2 # delayfb 0.5
+  d6 $ jux rev $ shuffle 2 $ loopAt 2 $ slice 8 "0 7 ~ ~ 4 ~ 6 7" $ s "8dt3synth" # gain (mx!!5) # n "7"
+
+hush
