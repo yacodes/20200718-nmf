@@ -102,3 +102,36 @@ hush
 d2 $ s "bd*4" # gain 2
 
 hush
+
+d1
+  $ fa 2 $ arpeggiate $ note ("[c, g, b, e]" - "<12!3 7>") # s "midi" # midichan "2" # gain 1 # legato 1
+  -- >> silence
+
+ 
+d2 $ s "dt3kick:3(5, 8)" # gain 1 # lpf 4000 # shape 0.2
+
+-- Try markovPat with HELM Vinegar Bass
+d1
+  $ fa 2 $ arpeggiate $ note ("[c, g, b, e]" - "<12!3 7>") # s "midi" # midichan "2" # gain 1 # legato 1
+  -- >> silence
+
+-- @TODO Move to 07-vinegar.tidal
+d1
+  $ fa 2 $ arpeggiate $ note ("[c, g, b, e]" - "<12!3 7>") # s "midi" # midichan "2" # gain 1 # legato 1
+  -- >> silence
+
+d2 $ s "dt3kick:3(5, 8)" # gain 1 # lpf 4000 # shape 0.2
+
+d3 $ fa 2 $ s "~ dt3snare"
+
+d4 $ sometimes (brak) $ degradeBy 0.2 $ s "dt3hat*16" # pan (segment 16 $ sl 4 $ perlin2With sine cosine) # gain 0.875
+
+d5 $ fa 4 $ s "~ dt3ride:11" # legato 1 # gain 0.875
+
+
+-- ##################
+d1
+  $ fa 2 $ arpeggiate $ note ("[c, g, b, e]" - "<24!3 17>") # s "midi" # midichan "3" # gain 1 # legato 1
+  -- >> silence
+
+hush
