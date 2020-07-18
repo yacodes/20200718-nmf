@@ -4,7 +4,7 @@ setcps (132/60/4)
 
 d1
   $ wm 30 28 (superimpose $ const $ loopAt 4 $ striate 32 $ s "dt3sweepup:11" # gain 1.2)
-  -- $ shuffle 4
+  $ shuffle 4
   $ fa 4
   $ arpeggiate $ note ("<g'm7f5 b'dom7 e'min7>" - "<17!3 12>")
   # s "midi" # midichan "2" # gain 1 # legato 1

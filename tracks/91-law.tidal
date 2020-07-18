@@ -2,7 +2,9 @@
 
 setcps (138/60/4)
 
-d1 $ shuffle 4 $ loopAt 4 $ striate 8 $ s "8dt3synth:9" # legato 1
+d1
+  -- $ shuffle 4
+  $ loopAt 4 $ striate 8 $ s "8dt3synth:9" # legato 1
 
 d2
   $ wm 16 14 (const $ qtrigger 2 $  loopAt 2 $ chop 8 $ s "dt3sweepup:5" # gain 1.2)
