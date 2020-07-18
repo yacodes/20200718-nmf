@@ -23,13 +23,12 @@ d2
 
 d3
   $ wm 32 28 (superimpose $ const $ (loopAt 4 $ rev $ striate 32 $ s "dt3seepd:9" # gain 1.1))
-  $ every 32 (superimpose $ const $ "dt3seepd:9" # gain 1.1)
+  $ every 33 (superimpose $ const $ "dt3seepd:9" # gain 1.1)
   $ stack [
     s "tfvox/4" # legato 1 # n (irand 10),
     s "dt3impact/3" # legato 1 # n (irand 18)
 ]
 
 d4 $ loopAt 4 $ striate 32 $ s "8tfsynth" # n "34" # gain 1.2 # pan (sl 2 $ (sine + tri + 0.33))
-
 
 hush

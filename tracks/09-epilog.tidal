@@ -1,0 +1,16 @@
+-- 09 Epilog.tidal
+
+setcps (122/60/4)
+
+d1
+  $ n ("<e'min7 g'maj7 b'min7 fs'dom7 fs'min7 d'dom7 b'min7>" - 12)
+  # s "midi" # midichan "3" # gain 1 # legato 2
+
+d2 $ stack [(sound $ slow 32 $ step' ["dt3perc", "dt2perc", "dtperc", "dt3sfx"]
+     (take 256 $ lindenmayer 7 "0:0~01,1:0101,2:0~21,3:~~02,~:2130~0~3" "0"))]
+  # n "{0 3 7 12 9 15 2}%4"
+  # legato 1
+
+d3 $ loopAt 4 $ striate 32 $ s "8tratmo:2" # shape 0.3 # gain 1.2
+
+hush
