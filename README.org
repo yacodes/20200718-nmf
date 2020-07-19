@@ -12,3 +12,5 @@ This is the repo for Network Music Festival 2020 TidalCycles performance by [[ht
   - [[https://n1lmusic.bandcamp.com/track/fang-mark-semantics][N1L — fang mark semantics]] 
   - [[https://opaltapes.com/track/hsft-side-b][Sote — HSFT Side B]]
   - [[https://vesseluk.bandcamp.com/track/argo-for-maggie][Vessel — Argo (For Maggie)]]
+*** Photos
+[[file:images/rec.jpg][Frame of performance recording]]
