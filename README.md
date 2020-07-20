@@ -1,12 +1,9 @@
-Repo for [Network Music Festival 2020](https://networkmusicfestival.org/algorave/ "NMF2020 Algorave Page") TidalCycles & Hydra performance by [Aleksandr Yakunichev](https://ya.codes/ "Aleksandr Yakunichev's Personal Site") & [Postviolet](http://www.violettapostnova.com/ "Postviolet's Personal Site")
+Repo for [Aleksandr Yakunichev](https://ya.codes/ "Aleksandr Yakunichev's Personal Site") & [Postviolet](http://www.violettapostnova.com/ "Postviolet's Personal Site") performance at [Network Music Festival 2020](https://networkmusicfestival.org/algorave/ "NMF2020 Algorave Page") with [TidalCycles](https://tidalcycles.org/index.php/Welcome) & [Hydra](https://hydra.ojack.xyz/) software 
 
 ## Videos
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=qh5uOGQc-gE
-" target="_blank"><img src="http://img.youtube.com/vi/qh5uOGQc-gE/0.jpg" 
-alt="Youtube recording of Aleksandr Yakunichev & Postviolet performance at NMF 2020" border="10" /></a>
+[![Frame of the performance recording](./images/rec.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=qh5uOGQc-gE "Frame of the performance recording")
 
 ## Photos
-![Frame of the performance recording](./images/rec.jpg)
 ![Reaper mixer configuration](./images/reaper.jpg)
 ![#1 VR Screenshot](./images/vr1.jpg)
 ![#2 VR Screenshot](./images/vr2.jpg)
