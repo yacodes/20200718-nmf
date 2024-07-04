@@ -3,7 +3,7 @@ s.options.numBuffers = 2**24;
 s.options.memSize = 2**20;
 s.options.maxNodes = 2**20;
 s.options.numOutputBusChannels = 24;
-s.options.numInputBusChannels = 0;
+s.options.numInputBusChannels = 1;
 
 s.waitForBoot {
   ~dirt = SuperDirt(2, s);
